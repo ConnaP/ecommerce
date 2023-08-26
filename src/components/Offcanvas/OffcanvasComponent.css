@@ -1,0 +1,15 @@
+.cart-products {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cart-product {
+  align-items: center;
+  margin: 8px 0;
+}
+
+.product-img {
+  margin-top: 16px;
+  width: 80px !important;
+}

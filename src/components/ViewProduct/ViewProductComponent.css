@@ -1,0 +1,15 @@
+.vcard-product {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.vcard-product-img {
+  height: 60%;
+  width: 30% !important;
+}
+
+.vprice-img {
+  display: flex !important;
+  justify-content: center;
+}
