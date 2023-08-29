@@ -1,4 +1,4 @@
-const isProd = false;
+const isProd = true;
 const isProdApi = true;
 
 export const configRuteFile = (name) => {
