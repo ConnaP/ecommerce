@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import OffcanvasComponent from "../Offcanvas/OffcanvasComponent";
+import { Container, Nav, Navbar } from "react-bootstrap";
+import { types } from "../../context/user/userReducer";
+import { UserContext } from "../../context/user/userContext";
 
 export const NavBarComponent = () => {
   const [show, setShow] = useState(false);
@@ -8,43 +11,44 @@ export const NavBarComponent = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [user] = useContext(UserContext);
+  const [, dispatch] = useContext(UserContext);
+
+  useEffect(() => {
+    if (!user || !user.user) {
+      const user = sessionStorage.getItem("user");
+
+      if (user) {
+        dispatch({
+          type: types.setUserState,
+          payload: JSON.parse(user),
+        });
+      }
+    }
+  }, []);
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
-          <NavLink className="navbar-brand" to="/">
-            Inicio
-          </NavLink>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div className="navbar-nav">
-              <NavLink className="nav-link" to="/ProductsList">
-                Productos en venta
-              </NavLink>
-              <NavLink className="nav-link" to="/RegisterFormPage">
-                Registrarse
-              </NavLink>
-              <NavLink className="nav-link" to="/LoginFormPage">
-                Ingresar
-              </NavLink>
-            </div>
-          </div>
-
-          <div className="navbar-nav">
+      <Navbar expand="lg" className="bg-body-tertiary">
+        <Container fluid>
+          <Navbar.Brand href="/">Inicio</Navbar.Brand>
+          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Collapse id="navbarScroll">
+            <Nav className="me-auto my-2 my-lg-0" navbarScroll>
+              <Nav.Link href="/ProductsList">Productos en venta</Nav.Link>
+              {!user?.user ? (
+                <>
+                  <Nav.Link href="/RegisterFormPage">Registrarse</Nav.Link>
+                  <Nav.Link href="/LoginFormPage">Ingresar</Nav.Link>
+                </>
+              ) : (
+                <></>
+              )}
+            </Nav>
             <NavLink className="nav-link" to="/PerfilPage">
               Perfil
             </NavLink>
-
+            {/* <NavLink className="nav-link"> */}
             <OffcanvasComponent
               // eslint-disable-next-line no-undef
               handleShow={handleShow}
@@ -53,9 +57,9 @@ export const NavBarComponent = () => {
               // eslint-disable-next-line no-undef
               show={show}
             />
-          </div>
-        </div>
-      </nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </>
   );
 };

@@ -3,7 +3,7 @@ import { CartPage } from "../pages/CartPage";
 import { HomePage } from "../pages/HomePage";
 import { LoginFormPage } from "../pages/LoginFormPage";
 import { PerfilPage } from "../pages/PerfilPage";
-import { ProductsList } from '../pages/ProductsList'
+import { ProductsList } from "../pages/ProductsList";
 import { RegisterFormPage } from "../pages/RegisterFormPage";
 import { ViewProductPage } from "../pages/ViewProductPage";
 

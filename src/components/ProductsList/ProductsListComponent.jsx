@@ -111,7 +111,7 @@ const ProductsListComponent = () => {
                     <Card.Img
                       className="card-product-img"
                       variant="top"
-                      src={p.img}
+                      src={p.img[0]}
                     />
                     <Card.Body>
                       <Card.Title>{p.name}</Card.Title>
@@ -121,19 +121,16 @@ const ProductsListComponent = () => {
                       <ListGroup.Item className="price-img">
                         ${p.price}
                         <button
-                          className="btn"
+                          className="btn btn-outline-secondary"
                           onClick={() => goViewProduct(p)}
                         >
-                          <Card.Img
-                            className="go-product-img"
-                            src={"../../../public/assets/ver-producto.png"}
-                          />
+                          Ver
                         </button>
                       </ListGroup.Item>
                     </ListGroup>
                     <Card.Body>
                       <button
-                        className="btn form-control"
+                        className="btn form-control btn-outline-info"
                         onClick={() => addProduct(p)}
                         type="submit"
                       >

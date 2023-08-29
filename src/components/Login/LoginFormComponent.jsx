@@ -5,6 +5,8 @@ import { UserContext } from "../../context/user/userContext";
 import axios from "axios";
 import jwt from "jwt-decode";
 
+import "./LoginFormComponent.css";
+
 export const LoginFormComponent = () => {
   const [isFetching, setIsFetching] = useState(false);
   const [, dispatch] = useContext(UserContext);
@@ -35,13 +37,14 @@ export const LoginFormComponent = () => {
         "http://localhost:3000/users/login",
         formState,
         {
-          // const{data}= await axios.post('https://backend-p5.onrender.com/users/login',formState,{
           headers: {
             "Context-Type": "application/json",
           },
         }
       );
       const tokenDecodificado = jwt(data.token);
+
+      sessionStorage.setItem("user", JSON.stringify(tokenDecodificado));
 
       dispatch({
         type: types.setUserState,
@@ -70,11 +73,9 @@ export const LoginFormComponent = () => {
 
   return (
     <>
-      <div className="container-fluid bg-light text-dark rounded">
+      <div className="container-login">
         <div className="text-center">
-          <h2>Login</h2>
-
-          <p>Inicio de sesión</p>
+          <h3>Iniciar de sesión</h3>
         </div>
 
         <div className="p-3">
@@ -94,7 +95,7 @@ export const LoginFormComponent = () => {
               />
             </div>
 
-            <div className="form-group g-3">
+            <div className="form-group g-3 mt-3">
               <label className="col-form-label mx-2" htmlFor="consult">
                 Password
               </label>
@@ -110,7 +111,7 @@ export const LoginFormComponent = () => {
             </div>
 
             <button
-              className="btn btn-primary d-grid col-6 mx-auto mt-2 shadow"
+              className="btn btn-outline-primary d-grid col-6 mx-auto shadow mt-4"
               type="submit"
               id="contact"
               onClick={handleSubmit}

@@ -1,15 +1,16 @@
 .card-product-img {
-    max-height: 300px;
-    height: 300px;
+  max-height: 300px;
+  height: 300px;
+  object-fit: cover;
 }
 
 .price-img {
-    display: flex !important;
-    justify-content: space-between;
-    align-items: center;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .go-product-img {
-    width: 50px !important;
-    height: 50px;
+  width: 50px !important;
+  height: 50px;
 }

@@ -48,11 +48,18 @@ const OffcanvasComponent = ({ handleShow, handleClose, show }) => {
       navigateTo("/LoginFormPage");
       return;
     } else {
-      alert(JSON.stringify([...products, user.user]));
-    }
+      dispatch({
+        type: types.setProductState,
+        payload: null,
+      });
 
-    // const productsProps = products;
-    // navigateTo("/CartPage", { state: productsProps });
+      setProducts([]);
+      setCount(0);
+
+      sessionStorage.removeItem("products");
+
+      alert("Compra Exitosa !!!");
+    }
   };
 
   const sumCount = async (i, operational) => {
@@ -91,7 +98,7 @@ const OffcanvasComponent = ({ handleShow, handleClose, show }) => {
 
   return (
     <>
-      <button onClick={handleShow} className="btn">
+      <button onClick={handleShow} className="btn cart">
         <img src="../../public/assets/carrito.png" alt="" width={30} />
         <span className="badge text-bg-primary rounded-pill">{count}</span>
       </button>
@@ -114,21 +121,21 @@ const OffcanvasComponent = ({ handleShow, handleClose, show }) => {
                     <Card key={i} className="cart-product">
                       <Card.Img
                         variant="top"
-                        src={product.img}
+                        src={product.img[0]}
                         className="product-img"
                       />
                       <Card.Body>
                         <Card.Title>{product.name}</Card.Title>
                         <Card.Text>{product.description}</Card.Text>
                         <button
-                          className="btn btn-success"
+                          className="btn btn-outline-success"
                           onClick={() => sumCount(i, "-")}
                         >
                           -1
                         </button>
                         <Card.Text>Cantidad:{product.quantity}</Card.Text>
                         <button
-                          className="btn btn-success"
+                          className="btn btn-outline-success"
                           onClick={() => sumCount(i, "+")}
                         >
                           +1
@@ -142,8 +149,8 @@ const OffcanvasComponent = ({ handleShow, handleClose, show }) => {
                 : "No hay productos en el carrito de compras"}
               {products.length > 0 ? (
                 <>
-                  <h3 className="my-4">Total a pagar: ${priceFinal}</h3>
-                  <button className="btn btn-success mb-3" onClick={goCartPage}>
+                  <h5 className="my-4">Total a pagar: ${priceFinal}</h5>
+                  <button className="btn btn-outline-info mb-3" onClick={goCartPage}>
                     Ir a pagar
                   </button>
                 </>

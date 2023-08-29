@@ -1,15 +1,16 @@
-.vcard-product {
+.container-carousel {
   display: flex;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
   margin-top: 20px;
 }
 
-.vcard-product-img {
-  height: 60%;
-  width: 30% !important;
+.img-carousel {
+  max-height: 700px !important;
 }
 
-.vprice-img {
-  display: flex !important;
-  justify-content: center;
+.btn-go-back {
+  width: 400px !important;
+  margin: 20px 0;
 }

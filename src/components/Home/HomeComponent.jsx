@@ -11,10 +11,19 @@ const HomeComponent = () => {
 
   return (
     <>
-      <h1>Bienvenido</h1>
-      <button className="btn btn-success" onClick={goCatalogue}>
-        Catálogo
-      </button>
+      <div className="container-front-page">
+        <img
+          src="../../public/assets/portada1.jpg"
+          alt="Fondo de pantalla"
+          className="background-image"
+        />
+        <button
+          className="btn btn-outline-dark centered-button"
+          onClick={goCatalogue}
+        >
+          Catálogo
+        </button>
+      </div>
     </>
   );
 };

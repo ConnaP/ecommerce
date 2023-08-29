@@ -13,3 +13,9 @@
   margin-top: 16px;
   width: 80px !important;
 }
+
+@media (max-width: 991px) {
+  .cart {
+    padding: 6px 0 !important;
+  }
+}
