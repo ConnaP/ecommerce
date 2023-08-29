@@ -1,4 +1,6 @@
+
 import { Card } from "react-bootstrap";
+import { configRuteFile } from "../../routes/configRuteFile";
 import { types } from "../../context/user/userReducer";
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -47,7 +49,7 @@ const PerfilComponent = () => {
             <Card.Title> {user.user.username} !!!</Card.Title>
             <Card.Img
               variant="top"
-              src={"../../../public/assets/avatar.png"}
+              src={configRuteFile('avatar.png')}
               className="user-img"
             />
             <Card.Text>Correo: {user.user.email}</Card.Text>

@@ -1,7 +1,8 @@
-import { useState } from "react";
 import { Carousel, Image } from "react-bootstrap";
+import { configRuteFile } from "../../routes/configRuteFile";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 import "./ViewProductComponent.css";
 
@@ -33,7 +34,7 @@ const ViewProductComponent = () => {
             >
               {receivedProps.img.map((img, i) => (
                 <Carousel.Item key={i}>
-                  <Image className="img-carousel" src={img} thumbnail />
+                  <Image className="img-carousel" src={configRuteFile(img)} thumbnail />
                 </Carousel.Item>
               ))}
             </Carousel>

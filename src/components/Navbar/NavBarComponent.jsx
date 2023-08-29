@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import OffcanvasComponent from "../Offcanvas/OffcanvasComponent";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { types } from "../../context/user/userReducer";
@@ -35,20 +35,25 @@ export const NavBarComponent = () => {
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav className="me-auto my-2 my-lg-0" navbarScroll>
-              <Nav.Link href="/ProductsList">Productos en venta</Nav.Link>
+              <Link to="/ProductsList" className="nav-link">
+                Productos en venta
+              </Link>
               {!user?.user ? (
                 <>
-                  <Nav.Link href="/RegisterFormPage">Registrarse</Nav.Link>
-                  <Nav.Link href="/LoginFormPage">Ingresar</Nav.Link>
+                  <Link to="/RegisterFormPage" className="nav-link">
+                    Registrarse
+                  </Link>
+                  <Link to="/LoginFormPage" className="nav-link">
+                    Ingresar
+                  </Link>
                 </>
               ) : (
                 <></>
               )}
             </Nav>
-            <NavLink className="nav-link" to="/PerfilPage">
+            <Link to="/PerfilPage" className="nav-link">
               Perfil
-            </NavLink>
-            {/* <NavLink className="nav-link"> */}
+            </Link>
             <OffcanvasComponent
               // eslint-disable-next-line no-undef
               handleShow={handleShow}

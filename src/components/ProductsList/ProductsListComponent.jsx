@@ -1,3 +1,5 @@
+import { configRuteFile } from "../../routes/configRuteFile";
+import { envRuteApi } from "../../routes/configRuteFile";
 import { ProductContext } from "../../context/product/productContext";
 import { types } from "../../context/product/productReducer";
 import { useContext, useState } from "react";
@@ -21,7 +23,7 @@ const ProductsListComponent = () => {
     const getProducts = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:3000/products/get-all"
+          `${envRuteApi()}products/get-all`
         );
 
         return data;
@@ -111,7 +113,7 @@ const ProductsListComponent = () => {
                     <Card.Img
                       className="card-product-img"
                       variant="top"
-                      src={p.img[0]}
+                      src={configRuteFile(p.img[0])}
                     />
                     <Card.Body>
                       <Card.Title>{p.name}</Card.Title>

@@ -1,5 +1,6 @@
 import "./HomeComponent.css";
 
+import { configRuteFile } from "../../routes/configRuteFile";
 import { useNavigate } from "react-router-dom";
 
 const HomeComponent = () => {
@@ -13,7 +14,7 @@ const HomeComponent = () => {
     <>
       <div className="container-front-page">
         <img
-          src="../../public/assets/portada1.jpg"
+          src={configRuteFile('portada1.jpg')}
           alt="Fondo de pantalla"
           className="background-image"
         />

@@ -1,9 +1,10 @@
 /* eslint-disable no-undef */
-import { useContext, useEffect, useState } from "react";
 import { Card, Offcanvas } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { configRuteFile } from "../../routes/configRuteFile";
 import { ProductContext } from "../../context/product/productContext";
 import { types } from "../../context/product/productReducer";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/user/userContext";
 
 import "./OffcanvasComponent.css";
@@ -121,7 +122,7 @@ const OffcanvasComponent = ({ handleShow, handleClose, show }) => {
                     <Card key={i} className="cart-product">
                       <Card.Img
                         variant="top"
-                        src={product.img[0]}
+                        src={configRuteFile(product.img[0])}
                         className="product-img"
                       />
                       <Card.Body>

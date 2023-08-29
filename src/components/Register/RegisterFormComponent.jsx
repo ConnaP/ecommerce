@@ -1,6 +1,8 @@
+import { envRuteApi } from "../../routes/configRuteFile";
 import { types } from "../../context/user/userReducer";
 import { useContext, useState } from "react";
 import { UserContext } from "../../context/user/userContext";
+
 import axios from "axios";
 import jwt from "jwt-decode";
 
@@ -36,7 +38,7 @@ export const RegisterFormComponent = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/users/register",
+        `${envRuteApi()}register`,
         formState,
         {
           headers: {
