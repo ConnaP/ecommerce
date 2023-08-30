@@ -18,6 +18,9 @@ const HomeComponent = () => {
           alt="Fondo de pantalla"
           className="background-image"
         />
+
+        <h2 className="letter-home">Si te gusta, úsalo!</h2>
+
         <button
           className="btn btn-outline-dark centered-button"
           onClick={goCatalogue}

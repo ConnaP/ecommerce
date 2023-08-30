@@ -1,0 +1,81 @@
+.contact {
+  width: 100%;
+  background-color: rgba(32, 32, 32, 200);
+  color: white;
+  padding: 50px 50px;
+}
+
+.text-gray-400 {
+  border-color: rgba(229, 231, 235, var(--tw-border-opacity));
+  width: 1.5rem;
+}
+.footer {
+  /* border-top: 1px solid gray; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 115px;
+  justify-content: center;
+  /* margin-top: 100px; */
+  background-color: #F1F0F1;
+}
+
+footer .comun {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  width: 250px;
+}
+
+footer .icon-redes-sociales {
+  flex-direction: row;
+}
+
+.circulo2 {
+  align-items: center;
+  background-color: #222326;
+  border-radius: 50%;
+  display: inline-flex;
+  height: 54px;
+  justify-content: center;
+  margin-top: 20px;
+  overflow: hidden;
+  width: 54px;
+}
+
+.img-redessociales {
+  background-color: white;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+}
+
+.letras-negras {
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.comun a {
+  color: black;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.comun a:hover {
+  color: red;
+}
+
+@media only screen and (max-width: 1344px) {
+  .footer {
+    gap: 25px;
+  }
+
+  footer .comun {
+    margin: 0;
+  }
+}

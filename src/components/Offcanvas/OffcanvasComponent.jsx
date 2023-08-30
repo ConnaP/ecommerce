@@ -100,8 +100,8 @@ const OffcanvasComponent = ({ handleShow, handleClose, show }) => {
   return (
     <>
       <button onClick={handleShow} className="btn cart">
-        <img src={configRuteFile("carrito.png")} alt="" width={30} />
-        <span className="badge text-bg-primary rounded-pill">{count}</span>
+        <img src={configRuteFile("cart-buy.png")} alt="" width={25} />
+        <span className="badge text-bg-primary rounded-pill ms-1">{count}</span>
       </button>
       {products.length > 0 ? (
         <Offcanvas

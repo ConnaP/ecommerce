@@ -1,5 +1,5 @@
-const isProd = false;
-const isProdApi = false;
+const isProd = true;
+const isProdApi = true;
 
 export const configRuteFile = (name) => {
   if (isProd) {
