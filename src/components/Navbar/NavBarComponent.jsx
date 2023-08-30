@@ -1,9 +1,11 @@
 import { useContext, useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import OffcanvasComponent from "../Offcanvas/OffcanvasComponent";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { types } from "../../context/user/userReducer";
 import { UserContext } from "../../context/user/userContext";
+
+import './NavBarComponent.css'
 
 export const NavBarComponent = () => {
   const [show, setShow] = useState(false);
@@ -29,7 +31,7 @@ export const NavBarComponent = () => {
 
   return (
     <>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className="bg-body-tertiary container-navbar">
         <Container fluid>
           <Navbar.Brand href="/">Inicio</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />

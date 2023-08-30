@@ -100,7 +100,7 @@ const OffcanvasComponent = ({ handleShow, handleClose, show }) => {
   return (
     <>
       <button onClick={handleShow} className="btn cart">
-        <img src="../../public/assets/carrito.png" alt="" width={30} />
+        <img src={configRuteFile("carrito.png")} alt="" width={30} />
         <span className="badge text-bg-primary rounded-pill">{count}</span>
       </button>
       {products.length > 0 ? (
@@ -151,7 +151,10 @@ const OffcanvasComponent = ({ handleShow, handleClose, show }) => {
               {products.length > 0 ? (
                 <>
                   <h5 className="my-4">Total a pagar: ${priceFinal}</h5>
-                  <button className="btn btn-outline-info mb-3" onClick={goCartPage}>
+                  <button
+                    className="btn btn-outline-info mb-3"
+                    onClick={goCartPage}
+                  >
                     Ir a pagar
                   </button>
                 </>

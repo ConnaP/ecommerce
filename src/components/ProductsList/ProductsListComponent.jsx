@@ -117,7 +117,7 @@ const ProductsListComponent = () => {
                     />
                     <Card.Body>
                       <Card.Title>{p.name}</Card.Title>
-                      <Card.Text>{p.description}</Card.Text>
+                      <Card.Text className="p">{p.description}</Card.Text>
                     </Card.Body>
                     <ListGroup className="list-group-flush">
                       <ListGroup.Item className="price-img">

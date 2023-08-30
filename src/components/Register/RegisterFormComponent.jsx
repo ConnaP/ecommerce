@@ -15,11 +15,8 @@ export const RegisterFormComponent = () => {
 
   const initForm = {
     username: "",
-
     phone: "",
-
     email: "",
-
     password: "",
   };
 
@@ -40,18 +37,13 @@ export const RegisterFormComponent = () => {
     setIsFetching(true);
 
     try {
-      const { data } = await axios.post(`${envRuteApi()}users/register`, formState, {
+      await axios.post(`${envRuteApi()}users/register`, formState, {
         headers: {
           "Context-Type": "application/json",
         },
       });
 
-      const tokenDecodificado = jwt(data.token);
-
-      dispatch({
-        type: types.setUserState,
-        payload: tokenDecodificado,
-      });
+      // const tokenDecodificado = jwt(data.token);
 
       window.alert("Registro exitoso");
       setIsFetching(false);
@@ -59,21 +51,9 @@ export const RegisterFormComponent = () => {
       navigateTo("/ProductsList");
     } catch (error) {
       window.alert(error?.response?.data?.message);
-      
-      dispatch({
-        type: types.setError,
-        payload: error,
-      });
       setIsFetching(false);
     }
-
-    addToDB(formState);
-
     // setFormState(initForm);
-  };
-
-  const addToDB = () => {
-    console.log(formState);
   };
 
   return (

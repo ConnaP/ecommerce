@@ -9,7 +9,7 @@ import { ViewProductPage } from "../pages/ViewProductPage";
 
 export const MainRouter = () => {
   return (
-    <>
+    <div className="my-5 py-2">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/CartPage" element={<CartPage />} />
@@ -19,6 +19,6 @@ export const MainRouter = () => {
         <Route path="/RegisterFormPage" element={<RegisterFormPage />} />
         <Route path="/ViewProductPage" element={<ViewProductPage />} />
       </Routes>
-    </>
+    </div>
   );
 };
