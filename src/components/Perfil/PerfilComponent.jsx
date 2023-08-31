@@ -46,7 +46,7 @@ const PerfilComponent = () => {
       {user?.user ? (
         <Card className="cart-user">
           <Card.Body>
-            <Card.Title> {user.user.username} !!!</Card.Title>
+            <Card.Title> {user.user.username} </Card.Title>
             <Card.Img
               variant="top"
               src={configRuteFile('avatar.png')}

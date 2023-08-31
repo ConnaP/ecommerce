@@ -1,11 +1,12 @@
-import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import OffcanvasComponent from "../Offcanvas/OffcanvasComponent";
+import { configRuteFile } from "../../routes/configRuteFile";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { types } from "../../context/user/userReducer";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context/user/userContext";
+import OffcanvasComponent from "../Offcanvas/OffcanvasComponent";
 
-import './NavBarComponent.css'
+import "./NavBarComponent.css";
 
 export const NavBarComponent = () => {
   const [show, setShow] = useState(false);
@@ -33,7 +34,9 @@ export const NavBarComponent = () => {
     <>
       <Navbar expand="lg" className="bg-body-tertiary container-navbar">
         <Container fluid>
-          <Navbar.Brand href="/">Inicio</Navbar.Brand>
+          <Navbar.Brand href="/">
+            <img src={configRuteFile("logo.png")} alt="" width={75} />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav className="me-auto my-2 my-lg-0" navbarScroll>
@@ -43,10 +46,10 @@ export const NavBarComponent = () => {
               {!user?.user ? (
                 <>
                   <Link to="/RegisterFormPage" className="nav-link">
-                    Registrarse
+                    Regístrate
                   </Link>
                   <Link to="/LoginFormPage" className="nav-link">
-                    Ingresar
+                    Inicia sesión
                   </Link>
                 </>
               ) : (

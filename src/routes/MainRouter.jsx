@@ -9,7 +9,7 @@ import { ViewProductPage } from "../pages/ViewProductPage";
 
 export const MainRouter = () => {
   return (
-    <div className="mt-5 pt-2">
+    <div className="mt-5 pt-5">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/CartPage" element={<CartPage />} />

@@ -29,5 +29,10 @@ Descubre el mundo de la moda desde la comodidad de tu dispositivo con nuestra ap
     5. Base de datos MongoDB
 
 
+#### Mockup
+![](public/assets/Mockup.png)
+
+
+
 #### Agradecimientos  
 > Bootcamp UDD

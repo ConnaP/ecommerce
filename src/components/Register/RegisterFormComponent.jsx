@@ -60,7 +60,7 @@ export const RegisterFormComponent = () => {
     <>
       <div className="container-register">
         <div className="text-center">
-          <h3>Registrarse</h3>
+          <h3>Regístrate</h3>
         </div>
 
         <div className="form-group g-3">
@@ -130,7 +130,7 @@ export const RegisterFormComponent = () => {
           onClick={handleSubmit}
           disabled={isFetching}
         >
-          Registrase
+          Registrarme
         </button>
       </div>
     </>

@@ -78,7 +78,7 @@ export const LoginFormComponent = () => {
     <>
       <div className="container-login">
         <div className="text-center">
-          <h3>Iniciar de sesión</h3>
+          <h3>Inicia sesión</h3>
         </div>
 
         <div className="p-3">
