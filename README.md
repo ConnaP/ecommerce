@@ -19,6 +19,7 @@ Descubre el mundo de la moda desde la comodidad de tu dispositivo con nuestra ap
     6. Registrar usuario
     7. Footer
     8. Listado de productos en carrito de compra
+    9. Vista del producto en particular (más imagenes) 
 	
 
 #### Tecnologías utilizadas
