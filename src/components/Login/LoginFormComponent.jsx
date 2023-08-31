@@ -100,7 +100,7 @@ export const LoginFormComponent = () => {
 
             <div className="form-group g-3 mt-3">
               <label className="col-form-label mx-2" htmlFor="consult">
-                Password
+                Clave
               </label>
 
               <input
